@@ -1,0 +1,12 @@
+<h1> <%= @house.name %> </h1>
+<p> <%= @house.author %> </p>
+<p> <%= @house.source %> </p>
+<p> <%= @house.motto %> </p>
+
+<h4>Members for this House</h4>
+
+<% @members.each do |member| %>
+  <h3> <%= member.first_name %> <%= member.last_name %> <%= member.created_at.strftime("%B %d %Y") %> </h3>
+<% end %>
+
+<h6> <%= link_to "Add a House Member", new_house_member_path(@house)%> </h6>

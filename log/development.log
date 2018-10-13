@@ -1,0 +1,2329 @@
+  [1m[35m (557.2ms)[0m  [1m[35mCREATE DATABASE "fantasy_houses_development" ENCODING = 'unicode'[0m
+  [1m[35m (488.3ms)[0m  [1m[35mCREATE DATABASE "fantasy_houses_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE "fantasy_houses_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "fantasy_houses_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2018-10-11 14:27:11 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/joshwyman/.gem/ruby/2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/joshwyman/.gem/ruby/2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (11.4ms)
+Completed 200 OK in 25ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (27.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8546372934869750190)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHouses (20181011183531)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "houses" ("id" bigserial primary key, "name" character varying NOT NULL, "author" character varying NOT NULL, "source" character varying NOT NULL, "motto" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181011183531"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-11 18:45:19.118093"], ["updated_at", "2018-10-11 18:45:19.118093"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8546372934869750190)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8546372934869750190)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHouses (20181011183531)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mDROP TABLE "houses"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20181011183531"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8546372934869750190)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8546372934869750190)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHouses (20181011183531)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "houses" ("id" bigserial primary key, "name" character varying NOT NULL, "author" character varying NOT NULL, "source" character varying NOT NULL, "motto" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181011183531"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8546372934869750190)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2018-10-11 14:52:46 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/joshwyman/.gem/ruby/2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/joshwyman/.gem/ruby/2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 26ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 14:52:51 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/joshwyman/.gem/ruby/2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/joshwyman/.gem/ruby/2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 14:55:32 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (2.4ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 442ms (Views: 422.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 15:10:41 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 28ms (Views: 24.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/house" for ::1 at 2018-10-11 15:10:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/house"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/house/new" for ::1 at 2018-10-11 15:11:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/house/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/house/new" for ::1 at 2018-10-11 15:12:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/house/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/house/new" for ::1 at 2018-10-11 15:12:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/house/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/houses/new" for ::1 at 2018-10-11 15:13:01 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 107ms (Views: 27.1ms | ActiveRecord: 53.9ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 15:13:28 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (3.1ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 39ms (Views: 32.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/routes" for ::1 at 2018-10-11 15:13:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/houses/new" for ::1 at 2018-10-11 15:13:53 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/house/new" for ::1 at 2018-10-11 15:14:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/house/new"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/houses/new" for ::1 at 2018-10-11 15:14:54 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 47ms (Views: 23.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 15:15:02 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 34ms (Views: 18.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 15:15:16 -0400
+  
+ActionController::RoutingError (uninitialized constant HouseController):
+  
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/" for ::1 at 2018-10-11 15:17:50 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 30ms (Views: 22.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 15:17:56 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 125ms (Views: 23.6ms | ActiveRecord: 91.5ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:20:09 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for HousesController):
+  
+actionpack (5.2.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started POST "/houses" for ::1 at 2018-10-11 15:21:50 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AclDKrKPTNXRcXXw6VoyAWFhVujQZqVYDf2e4hZ0v6CxPdXqq+BBC4AomCw86iP/9wCif6yUAS//zI7oIajx5w==", "house"=>{"name"=>"Raven Claw", "author"=>"JK Bowlings", "source"=>"Wizard World", "motto"=>"Fun is Fun til it's not fun"}, "commit"=>"Create New House"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `house_params' for #<HousesController:0x007fb99bdc2ec0>
+Did you mean?  house_path):
+  
+app/controllers/houses_controller.rb:15:in `create'
+Started POST "/houses" for ::1 at 2018-10-11 15:22:45 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AclDKrKPTNXRcXXw6VoyAWFhVujQZqVYDf2e4hZ0v6CxPdXqq+BBC4AomCw86iP/9wCif6yUAS//zI7oIajx5w==", "house"=>{"name"=>"Raven Claw", "author"=>"JK Bowlings", "source"=>"Wizard World", "motto"=>"Fun is Fun til it's not fun"}, "commit"=>"Create New House"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"houses"}, missing required keys: [:id]):
+  
+app/controllers/houses_controller.rb:15:in `create'
+Started POST "/houses" for ::1 at 2018-10-11 15:23:33 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AclDKrKPTNXRcXXw6VoyAWFhVujQZqVYDf2e4hZ0v6CxPdXqq+BBC4AomCw86iP/9wCif6yUAS//zI7oIajx5w==", "house"=>{"name"=>"Raven Claw", "author"=>"JK Bowlings", "source"=>"Wizard World", "motto"=>"Fun is Fun til it's not fun"}, "commit"=>"Create New House"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `house_params' for #<HousesController:0x007fb99d2fcea8>
+Did you mean?  house_path):
+  
+app/controllers/houses_controller.rb:15:in `create'
+Started POST "/houses" for ::1 at 2018-10-11 15:25:00 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AclDKrKPTNXRcXXw6VoyAWFhVujQZqVYDf2e4hZ0v6CxPdXqq+BBC4AomCw86iP/9wCif6yUAS//zI7oIajx5w==", "house"=>{"name"=>"Raven Claw", "author"=>"JK Bowlings", "source"=>"Wizard World", "motto"=>"Fun is Fun til it's not fun"}, "commit"=>"Create New House"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `house_params' for #<HousesController:0x007fb99d51e948>
+Did you mean?  house_path):
+  
+app/controllers/houses_controller.rb:15:in `create'
+Started POST "/houses" for ::1 at 2018-10-11 15:25:17 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AclDKrKPTNXRcXXw6VoyAWFhVujQZqVYDf2e4hZ0v6CxPdXqq+BBC4AomCw86iP/9wCif6yUAS//zI7oIajx5w==", "house"=>{"name"=>"Raven Claw", "author"=>"JK Bowlings", "source"=>"Wizard World", "motto"=>"Fun is Fun til it's not fun"}, "commit"=>"Create New House"}
+Unpermitted parameter: :motto
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHouse Create (2.6ms)[0m  [1m[32mINSERT INTO "houses" ("name", "author", "source", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Raven Claw"], ["author", "JK Bowlings"], ["source", "Wizard World"], ["created_at", "2018-10-11 19:25:17.329076"], ["updated_at", "2018-10-11 19:25:17.329076"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/houses/1
+Completed 302 Found in 29ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 15:25:17 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 112ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/houses/1" for ::1 at 2018-10-11 15:25:48 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 109ms (ActiveRecord: 8.2ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/houses/1" for ::1 at 2018-10-11 15:26:00 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 121ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/houses" for ::1 at 2018-10-11 15:26:05 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 15:26:10 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 99ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::UnknownFormat (HousesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+Started GET "/houses/1" for ::1 at 2018-10-11 15:28:04 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 42ms (Views: 22.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 15:28:29 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (1.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 15:30:15 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 20.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 15:30:21 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (1.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 15:30:24 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 15:31:11 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 15:31:13 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 15:31:34 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 15:31:37 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 71ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:31:59 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6xSb0V36/w22LbYYlj0l+o/iM7EXncU8NOAFs2AY8ddb4A0RRJXy0+d0W8RDjTQEGYPHJmtvYUvG0RW5V8S/kA==", "house"=>{"name"=>"Party House", "author"=>"Party Man", "source"=>"Party Industries", "motto"=>"Fun is Fun til it's not fun"}, "commit"=>"Create New House"}
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHouse Create (1.1ms)[0m  [1m[32mINSERT INTO "houses" ("name", "author", "source", "motto", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Party House"], ["author", "Party Man"], ["source", "Party Industries"], ["motto", "Fun is Fun til it's not fun"], ["created_at", "2018-10-11 19:31:59.150127"], ["updated_at", "2018-10-11 19:31:59.150127"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/houses/2
+Completed 302 Found in 19ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/houses/2" for ::1 at 2018-10-11 15:31:59 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 15:32:15 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/2" for ::1 at 2018-10-11 15:32:17 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 15:35:08 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:35:11 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRDmp6bCDURrg9FpFfA0bMVyxO+yJoJ9N60DkL8MmGip5HBnv60AmjraPLXAQCWSUxMweM7UJgrFnBOaiNDWLw==", "house"=>{"name"=>"", "author"=>"", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 60ms (Views: 25.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:35:19 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6oYQij4ToTBLqkqLH9JS2XadrI/Foa4XEzcFczvmr+JacoZKJ3ys7hrzp1fKYkMn4PxYGLlTCmDhBhV5DDrhpQ==", "house"=>{"name"=>"Raven Claw", "author"=>"", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHouse Create (0.7ms)[0m  [1m[32mINSERT INTO "houses" ("name", "author", "source", "motto", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Raven Claw"], ["author", ""], ["source", ""], ["motto", ""], ["created_at", "2018-10-11 19:35:19.985833"], ["updated_at", "2018-10-11 19:35:19.985833"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/houses/3
+Completed 302 Found in 18ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/houses/3" for ::1 at 2018-10-11 15:35:20 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mHouse Load (1.1ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 25.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 15:35:29 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/houses/3" for ::1 at 2018-10-11 15:35:31 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mHouse Load (1.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 35.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 15:35:45 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:35:49 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G59ywCo+rvyI7ILchG5LVUVyaYCONDSW5vWukKLd93yra+QAM1GjItm1bwBR3lqr0xOdF/LGkOEUxL6alQG5Ow==", "house"=>{"name"=>"", "author"=>"", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 46ms (Views: 39.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:37:55 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G59ywCo+rvyI7ILchG5LVUVyaYCONDSW5vWukKLd93yra+QAM1GjItm1bwBR3lqr0xOdF/LGkOEUxL6alQG5Ow==", "house"=>{"name"=>"", "author"=>"", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 27.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:38:00 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G59ywCo+rvyI7ILchG5LVUVyaYCONDSW5vWukKLd93yra+QAM1GjItm1bwBR3lqr0xOdF/LGkOEUxL6alQG5Ow==", "house"=>{"name"=>"", "author"=>"", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 28ms (Views: 20.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:40:17 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G59ywCo+rvyI7ILchG5LVUVyaYCONDSW5vWukKLd93yra+QAM1GjItm1bwBR3lqr0xOdF/LGkOEUxL6alQG5Ow==", "house"=>{"name"=>"", "author"=>"", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 71ms (Views: 21.0ms | ActiveRecord: 36.6ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:40:23 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gDXwA3tcxSrB5DaoRWwSKzcARFiWVlxFMGdZYhdSvmAwwWbDYjPI9JC923SQ3APVoWGwz+qk+DLCVkloII7wJw==", "house"=>{"name"=>"Fun House", "author"=>"", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 49ms (Views: 37.8ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:40:38 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"03otbH468LjXIpFQdHlIh2f4hEN/QJrN3ziUq4OYfUdjjrusZ1X9ZoZ7fIyhyVl58Zlw1AOyProtCYShtEQzAA==", "house"=>{"name"=>"Fun House", "author"=>"curly Boi", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 40ms (Views: 32.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:40:48 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AV3h2l8X3GlRzaU5q9R6lRenSDdTE/0SxZwGuJatl6qxqXcaRnjRtwCUSOV+ZGtrgca8oC/hWWU3rRayoXHZ7Q==", "house"=>{"name"=>"Fun House", "author"=>"curly Boi", "source"=>"Curly Boi Weekly", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHouse Create (2.5ms)[0m  [1m[32mINSERT INTO "houses" ("name", "author", "source", "motto", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Fun House"], ["author", "curly Boi"], ["source", "Curly Boi Weekly"], ["motto", ""], ["created_at", "2018-10-11 19:40:48.327395"], ["updated_at", "2018-10-11 19:40:48.327395"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/houses/4
+Completed 302 Found in 17ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/houses/4" for ::1 at 2018-10-11 15:40:48 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHouse Load (1.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/houses" for ::1 at 2018-10-11 15:42:23 -0400
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"03otbH468LjXIpFQdHlIh2f4hEN/QJrN3ziUq4OYfUdjjrusZ1X9ZoZ7fIyhyVl58Zlw1AOyProtCYShtEQzAA==", "house"=>{"name"=>"Fun House", "author"=>"curly Boi", "source"=>"", "motto"=>""}, "commit"=>"Create New House"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 42ms (Views: 35.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 15:42:38 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/houses/2" for ::1 at 2018-10-11 15:42:40 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/houses/2" for ::1 at 2018-10-11 15:51:26 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+rack (2.0.5) lib/rack/handler/webrick.rb:86:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+/Users/joshwyman/.rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8546372934869750190)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMembers (20181011194456)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "members" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "house_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_members_on_house_id" ON "members"  ("house_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181011194456"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8546372934869750190)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8546372934869750190)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMembers (20181011194456)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE "members"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20181011194456"]]
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8546372934869750190)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8546372934869750190)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMembers (20181011194456)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "members" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "house_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_members_on_house_id" ON "members"  ("house_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181011194456"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8546372934869750190)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/houses/2" for ::1 at 2018-10-11 15:53:37 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHouse Load (1.9ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 14.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `member' for #<House:0x007fb9a0d63510>
+Did you mean?  members
+               members=):
+    2: <p> <%= @house.author %> </p>
+    3: <p> <%= @house.source %> </p>
+    4: <p> <%= @house.motto %> </p>
+    5: <p> <%= @house.member %> </p>
+  
+app/views/houses/show.html.erb:5:in `_app_views_houses_show_html_erb__3602705779586522673_70217622032520'
+Started GET "/houses/2" for ::1 at 2018-10-11 15:56:48 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this house</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217619948180'
+Started GET "/" for ::1 at 2018-10-11 15:59:39 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 15:59:41 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 16:01:19 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217621887040'
+Started GET "/houses/1" for ::1 at 2018-10-11 16:02:21 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217583196100'
+Started GET "/houses/1" for ::1 at 2018-10-11 16:41:05 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (1.1ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 42.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217645403720'
+Started GET "/houses" for ::1 at 2018-10-11 17:02:56 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (2.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 56ms (Views: 51.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/houses/3" for ::1 at 2018-10-11 17:02:59 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mHouse Load (1.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217598102840'
+Started GET "/houses/4" for ::1 at 2018-10-11 17:03:07 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217620085480'
+Started GET "/houses/4" for ::1 at 2018-10-11 17:10:27 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHouse Load (1.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 38.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217661366400'
+Started GET "/houses/4" for ::1 at 2018-10-11 17:10:30 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217659019440'
+Started GET "/houses/" for ::1 at 2018-10-11 17:10:33 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 17:10:34 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217639282260'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMember Create (28.4ms)[0m  [1m[32mINSERT INTO "members" ("first_name", "last_name", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Billy"], ["last_name", "Bob"], ["house_id", 2], ["created_at", "2018-10-11 21:15:48.008815"], ["updated_at", "2018-10-11 21:15:48.008815"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+Started GET "/houses/1" for ::1 at 2018-10-11 17:16:05 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 11.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217612448040'
+Started GET "/houses" for ::1 at 2018-10-11 17:16:14 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (3.0ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 44ms (Views: 37.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 17:16:17 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <% @members.each do |member| %>
+    8:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    9: <% end %>
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217592743040'
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses"[0m
+Started GET "/houses/1" for ::1 at 2018-10-11 17:17:45 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <%= @member.first_name %>
+    8: <!-- <% @members.each do |member| %>
+    9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+   10: <% end %> -->
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217662106880'
+Started GET "/houses/" for ::1 at 2018-10-11 17:17:54 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 17:18:00 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <%= @member.first_name %>
+    8: <!-- <% @members.each do |member| %>
+    9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+   10: <% end %> -->
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217598171340'
+Started GET "/houses/1" for ::1 at 2018-10-11 17:18:13 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <%= @members.first_name %>
+    8: <!-- <% @members.each do |member| %>
+    9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+   10: <% end %> -->
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217658492660'
+Started GET "/houses/1" for ::1 at 2018-10-11 17:18:50 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <!-- <%= @member.first_name %> -->
+    8: <!-- <% @members.each do |member| %>
+    9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+   10: <% end %> -->
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217645501520'
+Started GET "/houses/" for ::1 at 2018-10-11 17:18:55 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 17:18:57 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (1.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <!-- <%= @member.first_name %> -->
+    8: <!-- <% @members.each do |member| %>
+    9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+   10: <% end %> -->
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217597122120'
+Started GET "/houses/1" for ::1 at 2018-10-11 17:19:09 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <!-- <%= @member.first_name %> -->
+    8: <!-- <% @members.each do |member| %>
+    9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+   10: <% end %> -->
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217594624780'
+Started GET "/" for ::1 at 2018-10-11 17:19:13 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 35ms (Views: 30.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 17:19:14 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    4: <p> <%= @house.motto %> </p>
+    5: 
+    6: <h4>Members for this House</h4>
+    7: <!-- <%= @member.first_name %> -->
+    8: <!-- <% @members.each do |member| %>
+    9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+   10: <% end %> -->
+  
+app/views/houses/show.html.erb:7:in `_app_views_houses_show_html_erb__3602705779586522673_70217653783880'
+Started GET "/houses/1" for ::1 at 2018-10-11 17:41:03 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (1.2ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  Rendered houses/show.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5: 
+     6: <h4>Members for this House</h4>
+     7: 
+     8: <% @members.each do |member| %>
+     9:   <h3> <%= member.first_name %> <%= member.last_name %> </h3>
+    10: <% end %>
+  
+app/views/houses/show.html.erb:8:in `_app_views_houses_show_html_erb__3602705779586522673_70217639647280'
+Started GET "/houses/1" for ::1 at 2018-10-11 17:47:53 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 13.1ms)
+
+
+  
+NoMethodError (undefined method `members' for #<Class:0x007fb9a391d160>):
+  
+app/controllers/houses_controller.rb:8:in `show'
+Started GET "/houses/1" for ::1 at 2018-10-11 17:48:18 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 6.6ms)
+
+
+  
+NoMethodError (undefined method `members' for #<Class:0x007fb9a0ee6b08>):
+  
+app/controllers/houses_controller.rb:8:in `show'
+Started GET "/houses/1" for ::1 at 2018-10-11 17:49:20 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 137ms (Views: 68.4ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 17:49:36 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (2.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 40ms (Views: 33.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/houses/2" for ::1 at 2018-10-11 17:49:40 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 2]]
+  Rendered houses/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 40ms (Views: 32.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 17:57:08 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.4ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 66ms (Views: 62.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 17:58:32 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 18:06:42 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 65ms (Views: 27.8ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 18:06:47 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (1.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (1.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 22.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/houses/" for ::1 at 2018-10-11 18:06:52 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (3.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 56ms (Views: 48.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/houses/" for ::1 at 2018-10-11 18:16:19 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 63ms (Views: 48.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 18:16:21 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (1.7ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 51ms (Views: 22.6ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:16:40 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0cFz7vjvPOgEaLGzMyRnEAlywJmaHkQKvizemzVO6BVhNeUu4YAxNlUxXG/mlHbunxM0Dubs4H1MHc6RApKmUg==", "member"=>{"first_name"=>"Josh", "last_name"=>"Wyman"}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMember Create (6.8ms)[0m  [1m[32mINSERT INTO "members" ("first_name", "last_name", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Josh"], ["last_name", "Wyman"], ["house_id", 1], ["created_at", "2018-10-11 22:16:40.469650"], ["updated_at", "2018-10-11 22:16:40.469650"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/houses/1
+Completed 302 Found in 22ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 18:16:40 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:16:54 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jLNtSmIuNv7pAq5haML1WX+z+KddGPddSv9yUF3uBfY8R/uKe0E7ILhbQ729cuSn6dIMMCHqUyq4zmJaajJLsQ==", "member"=>{"first_name"=>"Big ", "last_name"=>"Bird"}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMember Create (0.6ms)[0m  [1m[32mINSERT INTO "members" ("first_name", "last_name", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Big "], ["last_name", "Bird"], ["house_id", 1], ["created_at", "2018-10-11 22:16:54.284129"], ["updated_at", "2018-10-11 22:16:54.284129"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/houses/1
+Completed 302 Found in 16ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 18:16:54 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:16:56 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ERU6Kp4/qh0vCiqWZlwl0DFOOkHedXo7TeJehrFehHSh4azqh1Cnw35Tx0qz7DQupy/O1qKH3ky/006MhoLKMw==", "member"=>{"first_name"=>"", "last_name"=>""}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (1.3ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered houses/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 35ms (Views: 24.9ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:17:01 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"442akeZ0Gek5TxRF3dYRQquonrh48YhkUJLH/oLfESdTeQxR/xsUN2gW+ZkIZgC8PclqLwQDLBOio9f0tQNfYA==", "member"=>{"first_name"=>"", "last_name"=>""}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered houses/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 44ms (Views: 28.2ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:17:02 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wACCYx75qko/HWk7/e4vkWgH+JBGYuio6dlcSKR5Sydw9BSjB5anlG5EhOcoXj5v/mYMBzqQTN8b6ExCk6UFYA==", "member"=>{"first_name"=>"", "last_name"=>""}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered houses/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 41ms (Views: 30.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:17:04 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x/IfdCaxbJ0nHkD7LZTSqfJfRcDBsMiCSXsQrMKFdl53Bom0P95hQ3ZHrSf4JMNXZD6xV71CbPW7SgCm9Vk4GQ==", "member"=>{"first_name"=>"", "last_name"=>""}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered houses/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 30ms (Views: 21.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:17:11 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aFOD7AwmEsPSR/sOEbY3lFPEErBzEbv7621Mw9TbR6HYpxUsFUkfHYMeFtLEBiZqxaXmJw/jH4wZXFzJ4wcJ5g==", "member"=>{"first_name"=>"", "last_name"=>""}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered houses/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 42ms (Views: 31.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 18:17:14 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aFOD7AwmEsPSR/sOEbY3lFPEErBzEbv7621Mw9TbR6HYpxUsFUkfHYMeFtLEBiZqxaXmJw/jH4wZXFzJ4wcJ5g==", "member"=>{"first_name"=>"", "last_name"=>""}, "commit"=>"Submit Member Name", "house_id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered houses/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 31ms (Views: 24.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/houses/1/" for ::1 at 2018-10-11 18:17:59 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (2.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 45ms (Views: 34.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 18:18:03 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 37ms (Views: 32.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 18:21:24 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 18:22:32 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (34.0ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0x007fb9a3d7a8e8>:0x007fb99de473a8>
+Did you mean?  submit_tag):
+    4:   <h3> <%= link_to house.name, house_path(house) %></h3>
+    5: <% end %>
+    6: 
+    7: <h6> <%= submit "Add House", new_house_path %> </h6>
+  
+app/views/houses/index.html.erb:7:in `_app_views_houses_index_html_erb___3396464615426656477_70217597337280'
+Started GET "/houses" for ::1 at 2018-10-11 18:22:42 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 18:23:29 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 18:24:21 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Form):
+    1: <%= New House Form %>
+    2: <%= form_for(@house) do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :name, 'House Name' %><br/>
+  
+app/views/houses/new.html.erb:1:in `_app_views_houses_new_html_erb___3196191592052294321_70217592175960'
+Started GET "/houses/new" for ::1 at 2018-10-11 18:24:46 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Form):
+    1: <h3><%= New House Form %></h3>
+    2: <%= form_for(@house) do |f| %>
+    3:   <div class="field">
+    4:     <%= f.label :name, 'House Name' %><br/>
+  
+app/views/houses/new.html.erb:1:in `_app_views_houses_new_html_erb___3196191592052294321_70217580790700'
+Started GET "/houses/new" for ::1 at 2018-10-11 18:25:04 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 18:26:21 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 18:27:32 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (3.9ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 41ms (Views: 30.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 18:28:05 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 28.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/houses/4" for ::1 at 2018-10-11 18:29:05 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 4]]
+  Rendered houses/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 18:29:38 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `house' for #<#<Class:0x007fb9a3d7a8e8>:0x007fb9a527f3b0>
+Did you mean?  house_url
+               @houses):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <h6> <%= link_to "Add a House Member", house_path(house) %> </h6>
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___3396464615426656477_70217658269380'
+Started GET "/houses" for ::1 at 2018-10-11 18:31:07 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  Rendered houses/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/joshwyman/challenges/week6/rails-marathon/app/views/houses/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+... a House Member", link_to house.name, house_path(house) );@o...
+...                               ^
+/Users/joshwyman/challenges/week6/rails-marathon/app/views/houses/index.html.erb:8: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+...house.name, house_path(house) );@output_buffer.safe_append='...
+...                               ^
+/Users/joshwyman/challenges/week6/rails-marathon/app/views/houses/index.html.erb:11: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/joshwyman/challenges/week6/rails-marathon/app/views/houses/index.html.erb:13: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/houses/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/houses/index.html.erb:8: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+app/views/houses/index.html.erb:11: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/houses/index.html.erb:13: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/houses" for ::1 at 2018-10-11 18:31:19 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (28.7ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `house' for #<#<Class:0x007fb9a3d7a8e8>:0x007fb9a0fd0208>
+Did you mean?  house_url
+               @houses):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <h6> <%= link_to link_to house.name, house_path(house) %> </h6>
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___3396464615426656477_70217623307920'
+Started GET "/houses" for ::1 at 2018-10-11 18:31:41 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 18:31:43 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 18:32:05 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 18:32:06 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 18:32:49 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (35.8ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `member_path' for #<#<Class:0x007fb9a3d7a8e8>:0x007fb99ddfbd68>):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <h6> <%= link_to "Add a House Member", member_path %> </h6>
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___3396464615426656477_70217591964620'
+Started GET "/" for ::1 at 2018-10-11 18:33:58 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 18:34:01 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 18:34:16 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 40ms (Views: 34.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 18:36:24 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.7ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"houses", :id=>nil}, missing required keys: [:id]):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <h6> <%= link_to "Add a House Member", house_path(params[:id]) %> </h6>
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___3396464615426656477_70217665452380'
+Started GET "/" for ::1 at 2018-10-11 18:36:59 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+Started GET "/" for ::1 at 2018-10-11 18:41:11 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.3ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"houses", :id=>nil}, missing required keys: [:id]):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <!-- <h6> <%= link_to "Add a House Member", house_path(params[:id]) %> </h6> -->
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___3396464615426656477_70217639790580'
+Started GET "/" for ::1 at 2018-10-11 18:41:14 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.1ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"houses", :id=>nil}, missing required keys: [:id]):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <!-- <h6> <%= link_to "Add a House Member", house_path(params[:id]) %> </h6> -->
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___3396464615426656477_70217622259860'
+Started GET "/" for ::1 at 2018-10-11 18:41:18 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"houses", :id=>nil}, missing required keys: [:id]):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <!-- <h6> <%= link_to "Add a House Member", house_path(params[:id]) %> </h6> -->
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___3396464615426656477_70217661366520'
+Started GET "/" for ::1 at 2018-10-11 18:41:29 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 32.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2018-10-11 18:42:19 -0400
+Processing by HousesController#new as HTML
+  Rendering houses/new.html.erb within layouts/application
+  Rendered houses/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/houses/2" for ::1 at 2018-10-11 18:50:12 -0400
+  Rendered houses/index.html.erb within layouts/application (870524.8ms)
+Completed   in 870539ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/houses" for ::1 at 2018-10-11 18:51:41 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.9ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 277ms (Views: 254.4ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 18:51:43 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 38.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 18:51:45 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 93ms (Views: 48.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 19:02:22 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.4ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 45ms (Views: 29.2ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 19:02:23 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 19:02:25 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 19:02:26 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-10-11 19:05:27 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.6ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 7.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"members"}, missing required keys: [:house_id]):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <h6> <%= link_to "Add a House Member", new_house_member_path%> </h6>
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___2910386791591914367_70259550602420'
+Started GET "/" for ::1 at 2018-10-11 19:07:10 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (1.5ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"members", :house_id=>nil}, missing required keys: [:house_id]):
+    5: <% end %>
+    6: 
+    7: <h6> <%= link_to "Add New House", new_house_path %> </h6>
+    8: <h6> <%= link_to "Add a House Member", new_house_member_path(params[:house_id])%> </h6>
+  
+app/views/houses/index.html.erb:8:in `_app_views_houses_index_html_erb___2910386791591914367_70259552472020'
+Started GET "/" for ::1 at 2018-10-11 19:07:22 -0400
+Processing by HousesController#index as HTML
+  Rendering houses/index.html.erb within layouts/application
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT "houses".* FROM "houses" ORDER BY "houses"."created_at" ASC[0m
+  Rendered houses/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/houses/4" for ::1 at 2018-10-11 19:08:05 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHouse Load (1.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (1.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 4]]
+  Rendered houses/show.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 19.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"members", :house_id=>nil}, missing required keys: [:house_id]):
+     9:   <h3> <%= member.first_name %> <%= member.last_name %> <%= member.created_at.strftime("%B %d %Y") %> </h3>
+    10: <% end %>
+    11: 
+    12: <h6> <%= link_to "Add a House Member", new_house_member_path(params[:house_id])%> </h6>
+  
+app/views/houses/show.html.erb:12:in `_app_views_houses_show_html_erb__1318140755739672418_70259564786760'
+Started GET "/houses/4" for ::1 at 2018-10-11 19:08:40 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 4]]
+  Rendered houses/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 31.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/houses/4/members/new" for ::1 at 2018-10-11 19:09:26 -0400
+Processing by MembersController#new as HTML
+  Parameters: {"house_id"=>"4"}
+  [1m[36mHouse Load (1.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 32ms (Views: 24.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/houses/1" for ::1 at 2018-10-11 19:11:49 -0400
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."house_id" = $1[0m  [["house_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 45ms (Views: 20.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/houses/1/members/new" for ::1 at 2018-10-11 19:11:51 -0400
+Processing by MembersController#new as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 32ms (Views: 25.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 19:11:57 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RtnOGSadzDKRkNyJUw9k2/sNB9y83h/Nneb7hRqIxNb2LVjZP/LB7MDJMVWGv3UlbWzzS8Asu7pv1+uPLVSKkQ==", "member"=>{"first_name"=>"Josh", "last_name"=>""}, "commit"=>"Add Member", "house_id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering houses/show.html.erb within layouts/application
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered houses/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 19.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/houses/1/members/new" for ::1 at 2018-10-11 19:12:38 -0400
+Processing by MembersController#new as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 53ms (Views: 21.3ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/houses/1/members" for ::1 at 2018-10-11 19:12:41 -0400
+Processing by MembersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U8ZIwaL3xgtkmO/vnk3bBHSWrZfjAv1HLz9s+CTzNHPjMt4Bu5jL1TXBAjNL/cr64vdZAJ/wWTDdDnzyEy96NA==", "member"=>{"first_name"=>"Josh", "last_name"=>""}, "commit"=>"Add Member", "house_id"=>"1"}
+  [1m[36mHouse Load (0.9ms)[0m  [1m[34mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering members/new.html.erb within layouts/application
+  Rendered members/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 21.6ms | ActiveRecord: 1.9ms)
+
+

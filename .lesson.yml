@@ -1,0 +1,9 @@
+---
+title: "Rails Marathon"
+type: "challenge"
+description: "Practice your skills letting the Tests guide the development of a Rails app"
+behaviors:
+  - rails
+  - ruby_and_rspec
+  - capybara
+tags: "rails"
